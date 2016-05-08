@@ -1,20 +1,23 @@
 # GetR-res-getIdentifier-reflect
 get Android R res value through getIdentifier() and java reflect
 
-ÎÔ²Û£¬Ö®Ç°Ğ´ÁËÒ»Æª²©¿Í²»¼ûÁË£¬ÎÒÓÖµÃÖØĞÂĞ´£¨shit£¡????£©!
+å§æ§½ï¼Œä¹‹å‰å†™äº†ä¸€ç¯‡åšå®¢ä¸è§äº†ï¼Œæˆ‘åˆå¾—é‡æ–°å†™ï¼ˆshitï¼????ï¼‰!
 
-![image](http://img4.imgtn.bdimg.com/it/u=2340496989,162859093&fm=21&gp=0.jpg)
 
-ÓĞĞ©³¡¾°ÎÒÃÇÎŞ·¨ÔÚjava´úÂëÖĞÊ¹ÓÃR.drawable.iconÕâÑùµÄ×ÊÔ´id¡£ÀıÈçÔÚÄ³Ğ©²å¼ş¿ò¼Ü»òÕßÓÎÏ·¿ò¼ÜÖĞ¡£
+![image](https://github.com/illidantao/HelloAndroidM/blob/master/oldDriver.jpg)
+å¿«ä¸Šè½¦ï¼Œæ²¡æ—¶é—´è§£é‡Šäº†
 
-ÎÒË¾ÖÂÁ¦ÓÎÏ·ÊÂÒµ£¬ÎÒÃÇ×öÁËÒ»¸ösdk¹©ÓÎÏ·Æ½Ì¨½ÓÈë£¬È»ºó±»¸æÖª£¬ËûÃÇ²»ÄÜÓÃÎÒÃÇµÄaar£¬Ö»ÄÜÊ¹ÓÃjarºÍresÎÄ¼şµ¼Èë¡£ÕâÑù£¬jarÖĞµÄ×ÊÔ´µ¼Ïò»á´æÔÚÎÊÌâ¡£ÒòÎªÓÎÏ·Æ½Ì¨µÄÌØÊâĞÔÔÚ¿ª·¢µÄ¹ı³ÌÖĞ£¬Ã»ÓĞRÎÄ¼şµÄ¸ĞÄî£¬¶àÊı×ÊÔ´¾ùÔÚAssetÖĞ¡£
 
-³¤»°¶ÌËµ£¬¼òÊöÏÂ±¾ÏîÄ¿µÄÖØµã£¨Ö±½Ó´ÓÕâÀï¿ªÊ¼°É£©£º
+æœ‰äº›åœºæ™¯æˆ‘ä»¬æ— æ³•åœ¨javaä»£ç ä¸­ä½¿ç”¨R.drawable.iconè¿™æ ·çš„èµ„æºidã€‚ä¾‹å¦‚åœ¨æŸäº›æ’ä»¶æ¡†æ¶æˆ–è€…æ¸¸æˆæ¡†æ¶ä¸­ã€‚
 
-### 1. android ¸øÎÒÃÇÌá¹©ÁËÒ»¸ö·´Éä×ÊÔ´µÄ·½·¨
+æˆ‘å¸è‡´åŠ›æ¸¸æˆäº‹ä¸šï¼Œæˆ‘ä»¬åšäº†ä¸€ä¸ªsdkä¾›æ¸¸æˆå¹³å°æ¥å…¥ï¼Œç„¶åè¢«å‘ŠçŸ¥ï¼Œä»–ä»¬ä¸èƒ½ç”¨æˆ‘ä»¬çš„aarï¼Œåªèƒ½ä½¿ç”¨jarå’Œresæ–‡ä»¶å¯¼å…¥ã€‚è¿™æ ·ï¼Œjarä¸­çš„èµ„æºå¯¼å‘ä¼šå­˜åœ¨é—®é¢˜ã€‚å› ä¸ºæ¸¸æˆå¹³å°çš„ç‰¹æ®Šæ€§åœ¨å¼€å‘çš„è¿‡ç¨‹ä¸­ï¼Œæ²¡æœ‰Ræ–‡ä»¶çš„æ„Ÿå¿µï¼Œå¤šæ•°èµ„æºå‡åœ¨Assetä¸­ã€‚
 
- ÎÒÃÇÖ»ĞèÒª½«resµÄÃû³ÆºÍÀàĞÍ´«µİµ½º¯ÊıResources.getIdentifier(String name, String defType, String defPackage) ¾ÍÄÜµÃµ½¸Ã×ÊÔ´¶ÔÓ¦µÄĞÍid£¬Õâ¸öº¯ÊıµÄ·µ»ØÀàĞÍµ±È»ÊÇint
-¡£
+é•¿è¯çŸ­è¯´ï¼Œç®€è¿°ä¸‹æœ¬é¡¹ç›®çš„é‡ç‚¹ï¼ˆç›´æ¥ä»è¿™é‡Œå¼€å§‹å§ï¼‰ï¼š
+
+### 1. android ç»™æˆ‘ä»¬æä¾›äº†ä¸€ä¸ªåå°„èµ„æºçš„æ–¹æ³•
+
+ æˆ‘ä»¬åªéœ€è¦å°†resçš„åç§°å’Œç±»å‹ä¼ é€’åˆ°å‡½æ•°Resources.getIdentifier(String name, String defType, String defPackage) å°±èƒ½å¾—åˆ°è¯¥èµ„æºå¯¹åº”çš„å‹idï¼Œè¿™ä¸ªå‡½æ•°çš„è¿”å›ç±»å‹å½“ç„¶æ˜¯int
+ã€‚
 
 
 ```
@@ -24,16 +27,16 @@ private static int getIdentifier(String name, String defType) {
 ```
 
 
-++¸ßÄÜ£¡£¡++
-È»¶øÕâ¸öº¯ÊıÊÇÓĞ¿ÓµÄ£¬style£¬styleable ÕâÑùµÄ¸´ºÏÀàĞÍµÄ×ÊÔ´ÊÇÎŞ·¨Í¨¹ıÉÏÊö°ì·¨£¨getIdentifier£©»ñÈ¡µ½resµÄ£¬ÄãÄÃµ½µÄÓÀÔ¶ÊÇ0¡£
+++é«˜èƒ½ï¼ï¼++
+ç„¶è€Œè¿™ä¸ªå‡½æ•°æ˜¯æœ‰å‘çš„ï¼Œstyleï¼Œstyleable è¿™æ ·çš„å¤åˆç±»å‹çš„èµ„æºæ˜¯æ— æ³•é€šè¿‡ä¸Šè¿°åŠæ³•ï¼ˆgetIdentifierï¼‰è·å–åˆ°resçš„ï¼Œä½ æ‹¿åˆ°çš„æ°¸è¿œæ˜¯0ã€‚
 
-### 2. ÄÇ¾ÍÀûÓÃjavaµÄ·´Éä°É£¬Ç×²âÊÇ¿ÉÒÔµÄ
+### 2. é‚£å°±åˆ©ç”¨javaçš„åå°„å§ï¼Œäº²æµ‹æ˜¯å¯ä»¥çš„
 
 
 ```
 /**
      *
-     * ¶ÔÓÚcontext.getResources().getIdentifierÎŞ·¨»ñÈ¡µÄÊı¾İ,»òÕßÊı×é×ÊÔ´·´ÉäÖµ
+     * å¯¹äºcontext.getResources().getIdentifieræ— æ³•è·å–çš„æ•°æ®,æˆ–è€…æ•°ç»„èµ„æºåå°„å€¼
      * @param name
      * @param type
      * @return
@@ -55,28 +58,26 @@ private static int getIdentifier(String name, String defType) {
             }
         } catch (ClassNotFoundException ce) {
             ce.printStackTrace();
-            Log.w("epaysdk", "ÕÒ²»µ½ÏµÍ³RÎÄ¼ş£¬Çë¼ì²éRÎÄ¼şÂ·¾¶, error R File:" + RName);
+            Log.w("epaysdk", "æ‰¾ä¸åˆ°ç³»ç»ŸRæ–‡ä»¶ï¼Œè¯·æ£€æŸ¥Ræ–‡ä»¶è·¯å¾„, error R File:" + RName);
         } catch (Exception e) {
 
         }
         return null;
     }
 ```
-nameÊÇ×ÊÔ´µÄÃû³Æ£¬typeÊÇÀàĞÍ£¬ÕâÀïÀàĞÍ¾ÍÊÇstyle»òÕßstyleableÁË£¬ÆäËûµÄÀàĞÍÇëÓÃ·½·¨1¡£×¢ÒâRNameµÄ¸³Öµ£¬ÊÇ¡°com.xxx.xxxx.R¡±ÕâÑùµÄR full Class Name¡£
+nameæ˜¯èµ„æºçš„åç§°ï¼Œtypeæ˜¯ç±»å‹ï¼Œè¿™é‡Œç±»å‹å°±æ˜¯styleæˆ–è€…styleableäº†ï¼Œå…¶ä»–çš„ç±»å‹è¯·ç”¨æ–¹æ³•1ã€‚æ³¨æ„RNameçš„èµ‹å€¼ï¼Œæ˜¯â€œcom.xxx.xxxx.Râ€è¿™æ ·çš„R full Class Nameã€‚
 
 
-²»ÒªÒÔÎªÕâÑù¾ÍÍòÊÂ´ó¼ªÁË£¬ÔÚ½ÓÈë·½´ò°ü»ìÏı±àÒëºóÓÖTMµÄ³ö´íÁËcrashÁË£¬×ÊÔ´ÓÖÕÒ²»µ½ÁË
+ä¸è¦ä»¥ä¸ºè¿™æ ·å°±ä¸‡äº‹å¤§å‰äº†ï¼Œåœ¨æ¥å…¥æ–¹æ‰“åŒ…æ··æ·†ç¼–è¯‘ååˆTMçš„å‡ºé”™äº†crashäº†ï¼Œèµ„æºåˆæ‰¾ä¸åˆ°äº†
 
 
-![image](http://img5.imgtn.bdimg.com/it/u=3438884000,1950465061&fm=21&gp=0.jpg)
+
+åœ¨releaseåï¼ŒRæ–‡ä»¶å†…éƒ¨çš„ç±»å¦‚layout ã€id ã€styleä¹‹ç±»çš„æ˜¯ä»¥com.xxx.xxxx.R$layoutã€com.xxx.xxxx.R$idã€ com.xxx.xxxx.R$style è¿™æ ·çš„å½¢å¼å­˜åœ¨äºä»£ç æ–‡ä»¶ä¸­ï¼Œè€ŒåŠæ³•2çš„åå°„æ˜¯åå°„åˆ°Rçš„å†…éƒ¨å»ï¼Œå¯¼è‡´åå°„ä¸åˆ°èµ„æºã€‚ç„¶è€Œï¼Œdebug runçš„æ—¶å€™åˆå¯ä»¥åå°„åˆ°ã€‚
+
+æœ€ç»ˆåˆå…¼å®¹äº† releaseåçš„æ¨¡å¼ï¼Œå¸¦$çš„Rèµ„æºåå°„
 
 
-ÔÚreleaseºó£¬RÎÄ¼şÄÚ²¿µÄÀàÈçlayout ¡¢id ¡¢styleÖ®ÀàµÄÊÇÒÔcom.xxx.xxxx.R$layout¡¢com.xxx.xxxx.R$id¡¢ com.xxx.xxxx.R$style ÕâÑùµÄĞÎÊ½´æÔÚÓÚ´úÂëÎÄ¼şÖĞ£¬¶ø°ì·¨2µÄ·´ÉäÊÇ·´Éäµ½RµÄÄÚ²¿È¥£¬µ¼ÖÂ·´Éä²»µ½×ÊÔ´¡£È»¶ø£¬debug runµÄÊ±ºòÓÖ¿ÉÒÔ·´Éäµ½¡£
-
-×îÖÕÓÖ¼æÈİÁË releaseºóµÄÄ£Ê½£¬´ø$µÄR×ÊÔ´·´Éä
-
-
-As£º
+Asï¼š
 
 ```
 private static int getStyle_R$xx(String styleableName, String RClassName) {
@@ -92,12 +93,12 @@ private static int getStyle_R$xx(String styleableName, String RClassName) {
         return 0;
     }
 ```
-Õâ¸öRClassName¾ÍÊÇ¡°com.xxx.xxxx.R$style¡± 
-ÕâÑù¾ÍÄÜÕÒµ½±»$ºóµÄ×ÊÔ´ÁË
+è¿™ä¸ªRClassNameå°±æ˜¯â€œcom.xxx.xxxx.R$styleâ€ 
+è¿™æ ·å°±èƒ½æ‰¾åˆ°è¢«$åçš„èµ„æºäº†
 
-##### ×¢Òâ£º
+##### æ³¨æ„ï¼š
 
-ÕâÀïÌáĞÑÒ»ÏÂ£¬ÀûÓÃjava·´ÉäµÄÊ±ºòĞèÒªÌîĞ´ÕıÈ·µÄRÎÄ¼şÈ«Â·¾¶£¬RÎÄ¼şµÄ°üÃûÇø±ğÓÚappµÄ°üÃû£¨applicationId£©£¬×Ô¼ºÈ¥Ìå»á~~
+è¿™é‡Œæé†’ä¸€ä¸‹ï¼Œåˆ©ç”¨javaåå°„çš„æ—¶å€™éœ€è¦å¡«å†™æ­£ç¡®çš„Ræ–‡ä»¶å…¨è·¯å¾„ï¼ŒRæ–‡ä»¶çš„åŒ…ååŒºåˆ«äºappçš„åŒ…åï¼ˆapplicationIdï¼‰ï¼Œè‡ªå·±å»ä½“ä¼š~~
 
 
 detail see this file in project:com.dhunter.getr.r.R.java
